@@ -31,8 +31,11 @@ You need Python 3. Go to the project folder and run:
 python main.py
 ```
 
-The program prints some info about the athletes and events, writes `schedule.csv`
-and then checks the schedule with our checker.
+The program prints some info about the athletes and events, writes `schedule.csv`,
+checks the schedule with our checker and then opens a window with the visual schedule.
+Close the window to end the program.
+
+The window uses Tkinter, which comes with Python on Windows and Mac.
 
 ## Input format
 
@@ -79,6 +82,7 @@ The rows are sorted by time slot and then by station.
 | `schedule.py` | `make_schedule()` finds a free time slot and station for every event |
 | `write_output.py` | `write_schedule()` writes the schedule to `schedule.csv` |
 | `check_schedule.py` | Our checker, reads `schedule.csv` back and checks all the rules |
+| `visual_schedule.py` | `show_schedule()` draws the schedule in a window with Tkinter |
 
 ### The algorithm
 
@@ -101,3 +105,15 @@ There are 175 running events and only one TRACK, so 175 is the shortest possible
 4. every athlete got all of their disciplines
 
 It runs automatically at the end of `main.py`.
+
+## Optional feature: visual schedule
+
+`visual_schedule.py` shows the schedule in a Tkinter window, like a timetable:
+
+- every row is a time slot and every column is a station (LJ1, LJ2, HJ1, HJ2, PV1, TRACK)
+- every event is a box with the athlete's name and the discipline
+- the boxes have one color per discipline, there is a legend at the top
+- scroll down with the mouse wheel or the scrollbar to see all 175 time slots
+
+In the window you can see that the field events are done after about 36 time slots, but the
+TRACK is used in every time slot because all running events share one track.

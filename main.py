@@ -11,6 +11,7 @@ from schedule import make_schedule
 from availability import count_used_time_slots
 from write_output import write_schedule
 from check_schedule import check_schedule
+from visual_schedule import show_schedule
 
 INPUT_FILE = "athletes.csv"
 OUTPUT_FILE = "schedule.csv"
@@ -53,6 +54,11 @@ def main():
         print("The schedule is OK, no errors found!")
     else:
         print("Found", errors, "errors in the schedule")
+
+    # step 7: show the schedule in a window
+    print()
+    print("Opening the schedule window... (close the window to quit)")
+    show_schedule(schedule, station_names)
 
 
 main()
